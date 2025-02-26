@@ -1,78 +1,81 @@
 # altbank
 
-This project uses Quarkus, the Supersonic Subatomic Java Framework.
+## Português
 
-If you want to learn more about Quarkus, please visit its website: <https://quarkus.io/>.
+Este projeto utiliza o **Quarkus**, o framework Java Supersônico e Subatômico.
 
-## Running the application in dev mode
+Se quiser aprender mais sobre o Quarkus, visite o seu site: [https://quarkus.io/](https://quarkus.io/).
 
-You can run your application in dev mode that enables live coding using:
+### Tecnologias
+
+Este projeto é construído com as seguintes tecnologias:
+
+- **Java 17**
+- **Quarkus**
+- **Maven**
+- **MySQL**
+- **Jakarta Persistence (JPA)**
+- **Hibernate ORM**
+- **RESTful APIs**
+- **Flyway**
+- **JUnit5**
+- **Mockito**
+
+### Instalação e Configuração
+
+Para instalar e rodar este projeto, siga os seguintes passos:
+
+1. Clone o repositório:
+    ```bash
+    git clone https://github.com/joaomk/quarkus-app.git
+    ```
+2. Navegue até o diretório do projeto:
+    ```bash
+    cd your-repository
+    ```
+
+3. Compile o projeto usando o Maven:
+    ```bash
+    mvn clean install
+    ```
+
+Antes de rodar o projeto, será necessário o Docker para rodar o banco de dados MySQL. No diretório raiz do projeto, há um arquivo de configuração Docker. Você pode iniciar o container MySQL usando o seguinte comando:
+
+```shell script
+docker-compose up
+```
+
+Isso irá configurar e rodar o banco de dados MySQL, que será acessado pela aplicação.
+
+### Rodando a aplicação no modo dev
+
+Você pode rodar a aplicação no modo dev, que habilita live coding, com o seguinte comando:
 
 ```shell script
 ./mvnw quarkus:dev
 ```
 
-> **_NOTE:_**  Quarkus now ships with a Dev UI, which is available in dev mode only at <http://localhost:8080/q/dev/>.
+### Acessando o Swagger UI
 
-## Packaging and running the application
+Uma vez que a aplicação esteja rodando, você pode acessar o Swagger UI para interagir com a API REST e ver os endpoints disponíveis. O Swagger UI estará disponível em:
 
-The application can be packaged using:
-
-```shell script
-./mvnw package
+```bash
+http://localhost:8080/q/swagger-ui/
 ```
 
-It produces the `quarkus-run.jar` file in the `target/quarkus-app/` directory.
-Be aware that it’s not an _über-jar_ as the dependencies are copied into the `target/quarkus-app/lib/` directory.
+Isso permitirá que você explore e teste os endpoints da API de maneira amigável.
 
-The application is now runnable using `java -jar target/quarkus-app/quarkus-run.jar`.
+### Rodando os Testes
 
-If you want to build an _über-jar_, execute the following command:
+Para rodar os testes, use o seguinte comando:
 
-```shell script
-./mvnw package -Dquarkus.package.jar.type=uber-jar
+```bash
+mvn test
 ```
 
-The application, packaged as an _über-jar_, is now runnable using `java -jar target/*-runner.jar`.
+### Migrations do Banco de Dados
 
-## Creating a native executable
+Este projeto utiliza o **Flyway** para as migrations do banco de dados. Os scripts de migration do Flyway podem ser encontrados na pasta `src/main/resources/db/migration` dentro do repositório.
 
-You can create a native executable using:
+![DiagramaERAltbank](https://github.com/user-attachments/assets/9ceda7a5-ded6-4da2-b2d3-9cadeadf902d)
 
-```shell script
-./mvnw package -Dnative
-```
-
-Or, if you don't have GraalVM installed, you can run the native executable build in a container using:
-
-```shell script
-./mvnw package -Dnative -Dquarkus.native.container-build=true
-```
-
-You can then execute your native executable with: `./target/appquarkus-1.0.0-SNAPSHOT-runner`
-
-If you want to learn more about building native executables, please consult <https://quarkus.io/guides/maven-tooling>.
-
-## Related Guides
-
-- REST ([guide](https://quarkus.io/guides/rest)): A Jakarta REST implementation utilizing build time processing and Vert.x. This extension is not compatible with the quarkus-resteasy extension, or any of the extensions that depend on it.
-- REST Jackson ([guide](https://quarkus.io/guides/rest#json-serialisation)): Jackson serialization support for Quarkus REST. This extension is not compatible with the quarkus-resteasy extension, or any of the extensions that depend on it
-- Hibernate ORM with Panache ([guide](https://quarkus.io/guides/hibernate-orm-panache)): Simplify your persistence code for Hibernate ORM via the active record or the repository pattern
-- JDBC Driver - MySQL ([guide](https://quarkus.io/guides/datasource)): Connect to the MySQL database via JDBC
-
-## Provided Code
-
-### Hibernate ORM
-
-Create your first JPA entity
-
-[Related guide section...](https://quarkus.io/guides/hibernate-orm)
-
-[Related Hibernate with Panache section...](https://quarkus.io/guides/hibernate-orm-panache)
-
-
-### REST
-
-Easily start your REST Web Services
-
-[Related guide section...](https://quarkus.io/guides/getting-started-reactive#reactive-jax-rs-resources)
