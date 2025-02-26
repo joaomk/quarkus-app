@@ -77,6 +77,8 @@ mvn test
 
 Este projeto utiliza o **Flyway** para as migrations do banco de dados. Os scripts de migration do Flyway podem ser encontrados na pasta `src/main/resources/db/migration` dentro do repositório.
 
+## Diagrama Entidade Relacionamento
+
 ![DiagramaERAltbank](https://github.com/user-attachments/assets/ba53bd45-46d6-4ee0-bbb9-e6b9b95ab255)
 
 
