@@ -79,7 +79,8 @@ Este projeto utiliza o **Flyway** para as migrations do banco de dados. Os scrip
 
 ## Diagrama Entidade Relacionamento
 
-![DiagramaERAltbank](https://github.com/user-attachments/assets/ba53bd45-46d6-4ee0-bbb9-e6b9b95ab255)
+![image](https://github.com/user-attachments/assets/76ab590d-e6f9-4c28-9c6b-a1b9bb207469)
+
 
 
 
